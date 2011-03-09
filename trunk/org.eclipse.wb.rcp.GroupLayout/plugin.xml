@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+	<!-- ======================================================== -->
+	<!-- Policy -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.editPolicyFactories">
+		<factory class="org.eclipse.wb.internal.rcp.grouplayout.gef.LayoutEditPolicyFactory2"/>
+	</extension>
+
+	<!-- ======================================================== -->
+	<!-- Toolkit -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.toolkits">
+		<toolkit id="org.eclipse.wb.rcp">
+			<classLoader-library bundle="org.eclipse.wb.rcp.GroupLayout"
+				jar="swt-grouplayout.jar"/>
+			<palette>
+				<component class="org.eclipse.wb.swt.layout.grouplayout.GroupLayout"
+					category="org.eclipse.wb.rcp.layouts" condition="!(isdef isXWT)">
+					<library type="org.eclipse.wb.swt.layout.grouplayout.GroupLayout"
+						bundle="org.eclipse.wb.rcp.GroupLayout" jar="swt-grouplayout.jar"
+						src="swt-grouplayout.zip"/>
+				</component>
+			</palette>
+		</toolkit>
+	</extension>
+
+	<!-- ======================================================== -->
+	<!-- Layout -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.layoutManagers">
+		<layout toolkit="org.eclipse.wb.rcp" id="groupLayoutSWT" name="GroupLayout"
+			class="org.eclipse.wb.swt.layout.grouplayout.GroupLayout">
+			<library type="org.eclipse.wb.swt.layout.grouplayout.GroupLayout"
+				bundle="org.eclipse.wb.rcp.GroupLayout" jar="swt-grouplayout.jar"
+				src="swt-grouplayout.zip"/>
+		</layout>
+	</extension>
+
+	<!-- ======================================================== -->
+	<!-- CL Contributor -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.classLoadingContributor">
+		<contributor namespace="org.eclipse.wb.internal.rcp.model.layout.group."/>
+	</extension>
+
+</plugin>

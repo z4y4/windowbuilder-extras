@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.eclipse.wb.swing.LookAndFeel;singleton:=true
+Bundle-Version: 0.0.0
+Bundle-ClassPath: .,
+ lib/jgoodies-looks-2.4.0.jar,
+ lib/substance-6.1/substance.jar,
+ lib/substance-6.1/trident.jar
+Bundle-Vendor: %providerName
+Require-Bundle: org.eclipse.wb.swing,
+ org.eclipse.core.resources
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Localization: plugin

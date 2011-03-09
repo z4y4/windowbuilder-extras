@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+
+
+	<!-- ======================================================== -->
+	<!-- Toolkit -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.toolkits">
+		<toolkit id="org.eclipse.wb.swing">
+			<resourcePrefixes>
+				<resourcePrefix>ams.</resourcePrefix>
+			</resourcePrefixes>
+			<palette>
+				<category id="org.eclipse.wb.swing.ams" name="AMS Layouts" optional="true">
+					<component class="ams.zpointcs.components.VarmenuLayout"/>
+				</category>
+			</palette>
+		</toolkit>
+	</extension>
+
+
+	<!-- ======================================================== -->
+	<!-- Properties -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.propertiesPageProcessors">
+		<processor class="org.eclipse.wb.internal.swing.ams.model.property.AmsPropertyListProcessor"/>
+	</extension>
+
+	<extension point="org.eclipse.wb.core.propertiesPageCategoryProviders">
+		<provider class="org.eclipse.wb.internal.swing.ams.model.property.AmsPropertyCategoryProvider2"/>
+	</extension>
+
+
+</plugin>

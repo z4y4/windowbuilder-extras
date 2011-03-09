@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groups>
+	<group name="AMS" category="preferred" description="(AMS specific properties)">
+		<property name="buttonColor"/>
+	</group>
+	<group name="Other" description="(Rest properties)">
+		<property name="Variable" category="advanced-really"/>
+		<other-properties/>
+	</group>
+</groups>

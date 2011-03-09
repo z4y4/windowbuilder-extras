@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<extension point="org.eclipse.wb.swing.lookAndFeel">
+		<category id="Substance" name="Substance">
+			<LookAndFeel id="SubstanceAutumnLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceAutumnLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Autumn"/>
+			<LookAndFeel id="SubstanceBusinessLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceBusinessLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Business"/>
+			<LookAndFeel id="SubstanceBusinessBlackSteelLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceBusinessBlackSteelLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Business Black"/>
+			<LookAndFeel id="SubstanceBusinessBlueSteelLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceBusinessBlueSteelLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Business Blue"/>
+			<LookAndFeel id="SubstanceCremeLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceCremeLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Creme"/>
+			<LookAndFeel id="SubstanceCremeCoffeeLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceCremeCoffeeLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Creme Coffee"/>
+			<LookAndFeel id="SubstanceMistAquaLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceMistAquaLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Mist Aqua"/>
+			<LookAndFeel id="SubstanceMistSilverLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceMistSilverLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Mist Silver"/>
+			<LookAndFeel id="SubstanceModerateLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceModerateLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Moderate"/>
+			<LookAndFeel id="SubstanceNebulaLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceNebulaLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Nebula"/>
+			<LookAndFeel id="SubstanceNebulaBrickWallLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceNebulaBrickWallLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Nebula BrickWall"/>
+			<LookAndFeel id="SubstanceOfficeSilver2007LookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceOfficeSilver2007LookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Office Silver"/>
+			<LookAndFeel id="SubstanceSaharaLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceSaharaLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Sahara"/>
+		</category>
+		<category id="SubstanceDark" name="Substance Dark">
+			<LookAndFeel id="SubstanceChallengerDeepLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceChallengerDeepLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Challenger Deep"/>
+			<LookAndFeel id="SubstanceEmeraldDuskLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceEmeraldDuskLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Emerald Dusk"/>
+			<LookAndFeel id="SubstanceRavenLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceRavenLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Raven"/>
+			<LookAndFeel id="SubstanceGraphiteLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceGraphiteLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Graphite"/>
+			<LookAndFeel id="SubstanceGraphiteGlassLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceGraphiteGlassLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Graphite Glass"/>
+			<LookAndFeel id="SubstanceGraphiteAquaLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceGraphiteAquaLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Graphite Aqua"/>
+			<LookAndFeel id="SubstanceTwilightLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceTwilightLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Twilight"/>
+			<LookAndFeel id="SubstanceMagellanLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceMagellanLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Magellan"/>
+		</category>
+		<category id="SubstanceSaturated" name="Substance Saturated">
+			<LookAndFeel id="SubstanceDustLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceDustLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Dust"/>
+			<LookAndFeel id="SubstanceDustCoffeeLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceDustCoffeeLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Dust Coffee"/>
+			<LookAndFeel id="SubstanceOfficeBlue2007LookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceOfficeBlue2007LookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Office Blue"/>
+			<LookAndFeel id="SubstanceOfficeBlack2007LookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceOfficeBlack2007LookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Office Black"/>
+			<LookAndFeel id="SubstanceMarinerLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceMarinerLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Mariner"/>
+			<LookAndFeel id="SubstanceGeminiLookAndFeel"
+				class="org.pushingpixels.substance.api.skin.SubstanceGeminiLookAndFeel"
+				jarFile="lib/substance-6.1/substance.jar" name="Gemini"/>
+		</category>
+		<category id="JGoodies" name="JGoodies">
+			<LookAndFeel id="JGoodies Plastic" class="com.jgoodies.looks.plastic.PlasticLookAndFeel"
+				jarFile="lib/jgoodies-looks-2.4.0.jar" name="Plastic"/>
+			<LookAndFeel id="JGoodies Plastic3D"
+				class="com.jgoodies.looks.plastic.Plastic3DLookAndFeel"
+				jarFile="lib/jgoodies-looks-2.4.0.jar" name="Plastic 3D"/>
+			<LookAndFeel id="JGoodies PlasticXP"
+				class="com.jgoodies.looks.plastic.PlasticXPLookAndFeel"
+				jarFile="lib/jgoodies-looks-2.4.0.jar" name="Plastic XP"/>
+			<LookAndFeel id="JGoodies Windows" class="com.jgoodies.looks.windows.WindowsLookAndFeel"
+				jarFile="lib/jgoodies-looks-2.4.0.jar" name="Windows" condition="isWindows"/>
+		</category>
+		<category id="Other" name="Other"/>
+	</extension>
+</plugin>
