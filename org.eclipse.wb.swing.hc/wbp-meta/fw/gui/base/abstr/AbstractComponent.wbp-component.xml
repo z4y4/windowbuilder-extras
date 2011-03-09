@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.eclipse.org/wb/WBPComponent">
+	<description>[HUK-Coburg] Superklasse aller graphischen Komponenten, die das Safir-Rahmenwerk
+		bietet.</description>
+	<!-- EXPOSING RULES -->
+	<exposing-rules>
+		<exclude method="getActionTriggerComponent"/>
+		<exclude method="getDisplayComponent"/>
+	</exposing-rules>
+</component>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+	<!-- ======================================================== -->
+	<!-- Parser -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.parseFactories">
+		<factory class="org.eclipse.wb.internal.swing.hc.parser.ParseFactory"/>
+	</extension>
+
+
+	<!-- ======================================================== -->
+	<!-- Toolkit -->
+	<!-- ======================================================== -->
+	<extension point="org.eclipse.wb.core.toolkits">
+		<toolkit id="org.eclipse.wb.swing">
+			<resourcePrefixes>
+				<resourcePrefix>fw.gui.</resourcePrefix>
+			</resourcePrefixes>
+			<palette>
+				<category id="org.eclipse.wb.swing.hc" name="HUK-Coburg" optional="true">
+					<component class="fw.gui.layout.SafirGridBagLayout"/>
+				</category>
+			</palette>
+		</toolkit>
+	</extension>
+
+
+</plugin>

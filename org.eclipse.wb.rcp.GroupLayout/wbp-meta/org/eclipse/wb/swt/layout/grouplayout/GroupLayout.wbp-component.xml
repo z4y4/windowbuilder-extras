@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component xmlns="http://www.eclipse.org/wb/WBPComponent">
+	<model class="org.eclipse.wb.internal.rcp.grouplayout.model.GroupLayoutInfo2"/>
+	<order>last</order>
+	<description>SWT GroupLayout.</description>
+	<!-- CREATION -->
+	<creation>
+		<source><![CDATA[new org.eclipse.wb.swt.layout.grouplayout.GroupLayout(%parent%)]]></source>
+	</creation>
+	<!-- CONSTRUCTORS -->
+	<constructors>
+		<constructor>
+			<parameter type="org.eclipse.swt.widgets.Composite" parent="true"/>
+		</constructor>
+	</constructors>
+	<!-- METHODS -->
+	<methods>
+		<method name="setVerticalGroup" order="after setHorizontalGroup(org.eclipse.wb.swt.layout.grouplayout.GroupLayout.Group)">
+			<parameter type="org.eclipse.wb.swt.layout.grouplayout.GroupLayout$Group"/>
+		</method>
+		<method name="linkSize" order="after setVerticalGroup(org.eclipse.wb.swt.layout.grouplayout.GroupLayout.Group)">
+			<parameter type="org.eclipse.swt.widgets.Control[]"/>
+			<parameter type="int"/>
+		</method>
+		<method name="linkSize" order="after setVerticalGroup(org.eclipse.wb.swt.layout.grouplayout.GroupLayout.Group)">
+			<parameter type="org.eclipse.swt.widgets.Control[]"/>
+		</method>
+	</methods>
+</component>
