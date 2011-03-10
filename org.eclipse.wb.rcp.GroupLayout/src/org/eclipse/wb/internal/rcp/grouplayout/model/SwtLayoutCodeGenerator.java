@@ -173,7 +173,7 @@ public class SwtLayoutCodeGenerator {
     } else {
       layout.append(layoutVarName).append(".createSequentialGroup()"); // NOI18N
     }
-    Iterator subIntervals = group.getSubIntervals();
+    Iterator<?> subIntervals = group.getSubIntervals();
     while (subIntervals.hasNext()) {
       layout.append("\n"); // NOI18N
       LayoutInterval subInterval = (LayoutInterval) subIntervals.next();
@@ -450,7 +450,7 @@ public class SwtLayoutCodeGenerator {
           layout.append(dimension == LayoutConstants.HORIZONTAL ? ".HORIZONTAL, " : ".VERTICAL, "); // NOI18N
         }
         layout.append("new org.eclipse.swt.widgets.Control[] {"); //NOI18N
-        Iterator i = l.iterator();
+        Iterator<?> i = l.iterator();
         boolean first = true;
         while (i.hasNext()) {
           String cid = (String) i.next();
@@ -482,7 +482,7 @@ public class SwtLayoutCodeGenerator {
     /** Variable name of the component. */
     public String variableName;
     /** The component's class. */
-    public Class clazz;
+    public Class<?> clazz;
     /** The component's minimum size. */
     public Dimension minSize;
     /**
