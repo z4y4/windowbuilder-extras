@@ -13,4 +13,5 @@ Bundle-ClassPath: .,
  lib/fest-util-1.1.6.jar
 Export-Package: org.easymock,
  org.fest.assertions
+Require-Bundle: org.eclipse.wb.runtime.lib
 
