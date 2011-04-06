@@ -7,11 +7,8 @@ Bundle-Vendor: Google
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .,
- lib/EasyMock-3.0.jar,
- lib/objenesis-1.2.jar,
  lib/fest-assert-1.4.jar,
  lib/fest-util-1.1.6.jar
-Export-Package: org.easymock,
- org.fest.assertions
+Export-Package: org.fest.assertions
 Require-Bundle: org.eclipse.wb.runtime.lib
 
