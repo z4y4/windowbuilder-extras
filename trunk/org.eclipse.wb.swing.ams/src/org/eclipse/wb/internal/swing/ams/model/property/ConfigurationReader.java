@@ -18,6 +18,7 @@ import org.eclipse.wb.internal.core.model.JavaInfoUtils;
 import org.eclipse.wb.internal.core.model.property.category.PropertyCategory;
 import org.eclipse.wb.internal.core.utils.check.Assert;
 import org.eclipse.wb.internal.swing.ams.Activator;
+import org.eclipse.wb.internal.swing.ams.Messages;
 
 import org.eclipse.jdt.core.IJavaProject;
 
@@ -103,10 +104,10 @@ public final class ConfigurationReader {
               throws Exception {
             // prepare required name
             String name = attributes.getValue("name");
-            Assert.isNotNull(name, "No 'name' attribute for 'group'.");
+            Assert.isNotNull(name, Messages.ConfigurationReader_errGroup_noNameAttribute);
             // prepare optional description
             String description = attributes.getValue("description");
-            Assert.isNotNull(name, "No 'name' attribute for 'group'.");
+            Assert.isNotNull(name, Messages.ConfigurationReader_errGroup_noDescriptionAttribute);
             // prepare optional category
             PropertyCategory category = null;
             {
@@ -136,7 +137,7 @@ public final class ConfigurationReader {
           public void begin(String namespace, String name, Attributes attributes) throws Exception {
             // prepare required name
             String propertyName = attributes.getValue("name");
-            Assert.isNotNull(propertyName, "No 'name' attribute for 'property'.");
+            Assert.isNotNull(propertyName, Messages.ConfigurationReader_errProperty_noNameAttribute);
             // prepare optional category
             PropertyCategory category = null;
             {

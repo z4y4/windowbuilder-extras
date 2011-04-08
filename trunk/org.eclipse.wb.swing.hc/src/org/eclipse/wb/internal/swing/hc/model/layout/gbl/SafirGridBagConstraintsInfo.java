@@ -14,6 +14,7 @@ import org.eclipse.wb.internal.core.model.creation.CreationSupport;
 import org.eclipse.wb.internal.core.model.description.ComponentDescription;
 import org.eclipse.wb.internal.core.utils.ast.AstEditor;
 import org.eclipse.wb.internal.core.utils.reflect.ReflectionUtils;
+import org.eclipse.wb.internal.swing.hc.HCMessages;
 import org.eclipse.wb.internal.swing.model.CoordinateUtils;
 import org.eclipse.wb.internal.swing.model.component.ComponentInfo;
 import org.eclipse.wb.internal.swing.model.layout.gbl.AbstractGridBagConstraintsInfo;
@@ -23,6 +24,7 @@ import org.eclipse.wb.internal.swing.model.layout.gbl.RowInfo;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.LayoutManager;
+import java.text.MessageFormat;
 
 /**
  * Model for Safir {@link GridBagConstraints}.
@@ -119,7 +121,10 @@ public final class SafirGridBagConstraintsInfo extends AbstractGridBagConstraint
         return alignment.hAlignment;
       }
     }
-    throw new IllegalArgumentException("Unknown combination of fill/anchor: " + fill + " " + anchor);
+    throw new IllegalArgumentException(MessageFormat.format(
+        HCMessages.SafirGridBagConstraintsInfo_unknownFillAnchorCombination,
+        fill,
+        anchor));
   }
 
   @Override
@@ -133,7 +138,10 @@ public final class SafirGridBagConstraintsInfo extends AbstractGridBagConstraint
         return alignment.vAlignment;
       }
     }
-    throw new IllegalArgumentException("Unknown combination of fill/anchor: " + fill + " " + anchor);
+    throw new IllegalArgumentException(MessageFormat.format(
+        HCMessages.SafirGridBagConstraintsInfo_unknownFillAnchorCombination,
+        fill,
+        anchor));
   }
 
   ////////////////////////////////////////////////////////////////////////////
