@@ -124,10 +124,10 @@ public class LayoutStyle {
       int type,
       int position) {
     if (position != SWT.UP && position != SWT.DOWN && position != SWT.LEFT && position != SWT.RIGHT) {
-      throw new IllegalArgumentException("Invalid position");
+      throw new IllegalArgumentException(GroupLayoutMessages.LayoutStyle_invalidPosition);
     }
     if (source == null || target == null) {
-      throw new IllegalArgumentException("Components must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.LayoutStyle_notNullComponents);
     }
     if (type == RELATED) {
       return 6;
@@ -136,7 +136,7 @@ public class LayoutStyle {
     } else if (type == INDENT) {
       return 6;
     }
-    throw new IllegalArgumentException("Invalid type");
+    throw new IllegalArgumentException(GroupLayoutMessages.LayoutStyle_invalidType);
   }
 
   /**
@@ -159,10 +159,10 @@ public class LayoutStyle {
    */
   public int getContainerGap(Class<?> controlClass, int controlStyle, int position) {
     if (position != SWT.UP && position != SWT.DOWN && position != SWT.LEFT && position != SWT.RIGHT) {
-      throw new IllegalArgumentException("Invalid position");
+      throw new IllegalArgumentException(GroupLayoutMessages.LayoutStyle_invalidPosition);
     }
     if (controlClass == null) {
-      throw new IllegalArgumentException("Component must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.LayoutStyle_notNullComponent);
     }
     return 12;
   }

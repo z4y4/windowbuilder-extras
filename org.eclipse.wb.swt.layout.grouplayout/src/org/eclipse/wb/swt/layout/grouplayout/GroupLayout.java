@@ -192,7 +192,7 @@ public class GroupLayout extends Layout {
   private static void checkSize(int min, int pref, int max, boolean isComponentSpring) {
     checkResizeType(min, isComponentSpring);
     if (!isComponentSpring && pref < 0) {
-      throw new IllegalArgumentException("Pref must be >= 0");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_prefGreaterZero);
     } else if (isComponentSpring) {
       checkResizeType(pref, true);
     }
@@ -205,13 +205,13 @@ public class GroupLayout extends Layout {
     if (type < 0
         && (isComponentSpring && type != DEFAULT_SIZE && type != PREFERRED_SIZE || !isComponentSpring
             && type != PREFERRED_SIZE)) {
-      throw new IllegalArgumentException("Invalid size");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidSize);
     }
   }
 
   private static void checkLessThan(int min, int max) {
     if (min >= 0 && max >= 0 && min > max) {
-      throw new IllegalArgumentException("Following is not met: min<=pref<=max");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_wrongMinPrefMax);
     }
   }
 
@@ -225,7 +225,7 @@ public class GroupLayout extends Layout {
    */
   public GroupLayout(Composite host) {
     if (host == null) {
-      throw new IllegalArgumentException("Container must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullContainer);
     }
     honorsVisibility = true;
     this.host = host;
@@ -292,7 +292,7 @@ public class GroupLayout extends Layout {
    */
   public void setHonorsVisibility(Control component, Boolean honorsVisibility) {
     if (component == null) {
-      throw new IllegalArgumentException("Component must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullComponent);
     }
     getComponentInfo(component).setHonorsVisibility(honorsVisibility);
     springsChanged = true;
@@ -428,7 +428,7 @@ public class GroupLayout extends Layout {
    */
   public void setHorizontalGroup(Group group) {
     if (group == null) {
-      throw new IllegalArgumentException("Group must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullGroup);
     }
     horizontalGroup = createTopLevelGroup(group);
     invalidateHost();
@@ -457,7 +457,7 @@ public class GroupLayout extends Layout {
    */
   public void setVerticalGroup(Group group) {
     if (group == null) {
-      throw new IllegalArgumentException("Group must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullGroup);
     }
     verticalGroup = createTopLevelGroup(group);
     invalidateHost();
@@ -601,17 +601,17 @@ public class GroupLayout extends Layout {
    */
   public void linkSize(Control[] components, int axis) {
     if (components == null) {
-      throw new IllegalArgumentException("Components must be non-null");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullComponents);
     }
     boolean horizontal = (axis & HORIZONTAL) == HORIZONTAL;
     boolean vertical = (axis & VERTICAL) == VERTICAL;
     if (!vertical && !horizontal) {
-      throw new IllegalArgumentException("Axis must contain HORIZONTAL or VERTICAL");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_axisValue);
     }
     for (int counter = components.length - 1; counter >= 0; counter--) {
       Control c = components[counter];
       if (components[counter] == null) {
-        throw new IllegalArgumentException("Components must be non-null");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullComponents);
       }
       // Force the component to be added
       getComponentInfo(c);
@@ -957,10 +957,12 @@ public class GroupLayout extends Layout {
     while (infos.hasNext()) {
       ComponentInfo info = infos.next();
       if (info.horizontalSpring == null) {
-        throw new IllegalStateException(info.component + " is not attached to a horizontal group");
+        throw new IllegalStateException(info.component
+            + GroupLayoutMessages.GroupLayout_isNotAttachedHorizontal);
       }
       if (info.verticalSpring == null) {
-        throw new IllegalStateException(info.component + " is not attached to a vertical group");
+        throw new IllegalStateException(info.component
+            + GroupLayoutMessages.GroupLayout_isNotAttachedVertical);
       }
     }
   }
@@ -984,7 +986,7 @@ public class GroupLayout extends Layout {
 
   private void checkParent(Composite parent) {
     if (parent != host) {
-      throw new IllegalArgumentException("GroupLayout can only be used with one Container at a time");
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_oneContainer);
     }
   }
 
@@ -997,7 +999,7 @@ public class GroupLayout extends Layout {
       info = new ComponentInfo(component);
       componentInfos.put(component, info);
       if (component.getParent() != host) {
-        throw new IllegalArgumentException("Control is not in this parent.");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_wrongControlParent);
       }
     }
     return info;
@@ -1327,7 +1329,7 @@ public class GroupLayout extends Layout {
         case MAX_SIZE :
           return spring.getMaximumSize(axis);
       }
-      throw new IllegalArgumentException("Invalid type: " + type);
+      throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidSpringType + type);
     }
 
     // Padding
@@ -1596,10 +1598,10 @@ public class GroupLayout extends Layout {
       if (type != LayoutStyle.RELATED
           && type != LayoutStyle.UNRELATED
           && type != LayoutStyle.INDENT) {
-        throw new IllegalArgumentException("Invalid type argument");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidGapType);
       }
       if (comp1 == null || comp2 == null) {
-        throw new IllegalArgumentException("Components must be non-null");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullComponents);
       }
       return (SequentialGroup) addSpring(new PaddingSpring(comp1, comp2, type, canGrow));
     }
@@ -1646,7 +1648,7 @@ public class GroupLayout extends Layout {
      */
     public SequentialGroup addPreferredGap(int type, int pref, int max) {
       if (type != LayoutStyle.RELATED && type != LayoutStyle.UNRELATED) {
-        throw new IllegalArgumentException("Padding type must be one of Padding.RELATED or Padding.UNRELATED");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidGapType2);
       }
       if (pref < 0
           && pref != DEFAULT_SIZE
@@ -1657,8 +1659,8 @@ public class GroupLayout extends Layout {
           || pref >= 0
           && max >= 0
           && pref > max) {
-        throw new IllegalArgumentException("Pref and max must be either DEFAULT_SIZE, "
-            + "PREFERRED_SIZE, or >= 0 and pref <= max");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidGapValue1
+            + GroupLayoutMessages.GroupLayout_invalidGapValue2);
       }
       hasPreferredPaddingSprings = true;
       return (SequentialGroup) addSpring(new AutopaddingSpring(type, pref, max));
@@ -1697,7 +1699,7 @@ public class GroupLayout extends Layout {
           || pref >= 0
           && max >= 0
           && pref > max) {
-        throw new IllegalArgumentException("Pref and max must be either DEFAULT_VALUE or >= 0 and pref <= max");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidContainerGap);
       }
       hasPreferredPaddingSprings = true;
       return (SequentialGroup) addSpring(new ContainerAutopaddingSpring(pref, max));
@@ -2272,15 +2274,15 @@ public class GroupLayout extends Layout {
     private void checkChildAlignment(int alignment) {
       boolean allowsBaseline = this instanceof BaselineGroup;
       if (!allowsBaseline && alignment == BASELINE) {
-        throw new IllegalArgumentException("Alignment must be one of:"
-            + "LEADING, TRAILING or CENTER");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidAlignment1
+            + GroupLayoutMessages.GroupLayout_invalidAlignment2);
       }
       if (alignment != CENTER
           && alignment != BASELINE
           && alignment != LEADING
           && alignment != TRAILING) {
-        throw new IllegalArgumentException("Alignment must be one of:"
-            + "LEADING, TRAILING or CENTER");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_invalidAlignment3
+            + GroupLayoutMessages.GroupLayout_invalidAlignment4);
       }
     }
   }
@@ -2544,7 +2546,7 @@ public class GroupLayout extends Layout {
     // If the axis is VERTICAL, throws an IllegalStateException
     private void checkAxis(int axis) {
       if (axis == HORIZONTAL) {
-        throw new IllegalStateException("Baseline must be used along vertical axis");
+        throw new IllegalStateException(GroupLayoutMessages.GroupLayout_baselineOnlyVertical);
       }
     }
   }
@@ -2572,7 +2574,7 @@ public class GroupLayout extends Layout {
     private ComponentSpring(Control component, int min, int pref, int max) {
       this.component = component;
       if (component == null) {
-        throw new IllegalArgumentException("Component must be non-null");
+        throw new IllegalArgumentException(GroupLayoutMessages.GroupLayout_notNullComponent);
       }
       checkSize(min, pref, max, true);
       this.min = min;
