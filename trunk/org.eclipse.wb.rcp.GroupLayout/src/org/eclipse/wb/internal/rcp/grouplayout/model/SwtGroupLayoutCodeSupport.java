@@ -13,6 +13,7 @@ package org.eclipse.wb.internal.rcp.grouplayout.model;
 import org.eclipse.wb.core.model.AbstractComponentInfo;
 import org.eclipse.wb.core.model.ObjectInfoUtils;
 import org.eclipse.wb.internal.core.model.JavaInfoEvaluationHelper;
+import org.eclipse.wb.internal.core.model.util.TemplateUtils;
 import org.eclipse.wb.internal.core.utils.ast.AstNodeUtils;
 import org.eclipse.wb.internal.layout.group.model.GroupLayoutCodeSupport;
 import org.eclipse.wb.internal.swt.model.widgets.ControlInfo;
@@ -66,7 +67,7 @@ public final class SwtGroupLayoutCodeSupport extends GroupLayoutCodeSupport
       ControlInfo component = (ControlInfo) abstractComponent;
       SwtLayoutCodeGenerator.ComponentInfo info = new SwtLayoutCodeGenerator.ComponentInfo();
       info.id = ObjectInfoUtils.getId(component);
-      info.variableName = "j:" + info.id;
+      info.variableName = TemplateUtils.ID_PREFIX + info.id;
       info.clazz = component.getDescription().getComponentClass();
       infos[i++] = info;
     }
