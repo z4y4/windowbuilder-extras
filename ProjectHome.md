@@ -1,0 +1,1 @@
+Extra plugins and goodies for the Eclipse.org [WindowBuilder](http://eclipse.org/projects/project_summary.php?projectid=tools.windowbuilder) project
